@@ -1,580 +1,243 @@
+```php
 <?php
-
-$kursus = [
-    [
-        "nama" => "Pemrograman Web Dasar",
-        "kategori" => "Web Development",
-        "durasi" => "8 Minggu",
-        "harga" => 500000,
-        "status" => "Tersedia"
-    ],
-    [
-        "nama" => "PHP & MySQL",
-        "kategori" => "Backend Development",
-        "durasi" => "10 Minggu",
-        "harga" => 750000,
-        "status" => "Tersedia"
-    ],
-    [
-        "nama" => "UI/UX Design",
-        "kategori" => "Design",
-        "durasi" => "6 Minggu",
-        "harga" => 600000,
-        "status" => "Penuh"
-    ],
-    [
-        "nama" => "Python untuk Pemula",
-        "kategori" => "Programming",
-        "durasi" => "8 Minggu",
-        "harga" => 650000,
-        "status" => "Tersedia"
-    ],
-    [
-        "nama" => "Digital Marketing",
-        "kategori" => "Marketing",
-        "durasi" => "6 Minggu",
-        "harga" => 550000,
-        "status" => "Penuh"
-    ],
-    [
-        "nama" => "Data Analysis",
-        "kategori" => "Data Science",
-        "durasi" => "10 Minggu",
-        "harga" => 800000,
-        "status" => "Tersedia"
-    ]
-];
-
 ?>
-
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta charset="UTF-8">
+    <title>Kursusku - Beranda</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Kursusku Prototype - Platform katalog kursus online">
-
-<title>Kursusku - Katalog Kursus</title>
-
-<style>
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f6f8;
-        color: #222;
-        line-height: 1.6;
-    }
-
-    /* HEADER */
-
-    header {
-        background: #2563eb;
-        color: white;
-        padding: 35px 20px;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 36px;
-        margin-bottom: 8px;
-    }
-
-    header p {
-        font-size: 16px;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-        background: #1d4ed8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        padding: 12px;
-        flex-wrap: wrap;
-    }
-
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 18px;
-        border-radius: 7px;
-        background: rgba(255, 255, 255, 0.12);
-        transition: 0.2s;
-    }
-
-    .navbar a:hover {
-        background: white;
-        color: #1d4ed8;
-    }
-
-    /* CONTAINER */
-
-    .container {
-        width: 90%;
-        max-width: 1100px;
-        margin: 40px auto;
-    }
-
-    /* HERO */
-
-    .hero {
-        background: white;
-        padding: 35px;
-        border-radius: 14px;
-        margin-bottom: 35px;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .hero h2 {
-        color: #2563eb;
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        color: #555;
-    }
-
-    /* KATALOG */
-
-    .section-title {
-        margin-bottom: 20px;
-        color: #1f2937;
-    }
-
-    .kursus-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    .kursus {
-        background: white;
-        padding: 22px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s;
-    }
-
-    .kursus:hover {
-        transform: translateY(-3px);
-    }
-
-    .kursus h3 {
-        color: #1d4ed8;
-        margin-bottom: 12px;
-    }
-
-    .kursus p {
-        margin-bottom: 8px;
-        color: #555;
-    }
-
-    .harga {
-        font-size: 18px;
-        font-weight: bold;
-        color: #111827;
-        margin-top: 12px;
-    }
-
-    /* STATUS */
-
-    .status {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    .tersedia {
-        background: #dcfce7;
-        color: #166534;
-    }
-
-    .penuh {
-        background: #fee2e2;
-        color: #991b1b;
-    }
-
-    /* KOMPONEN */
-
-    .component-section {
-        margin-top: 45px;
-    }
-
-    .components {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    .component {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .component h3 {
-        margin-bottom: 10px;
-        color: #1d4ed8;
-    }
-
-    .component p {
-        color: #666;
-        margin-bottom: 18px;
-    }
-
-    .button {
-        display: inline-block;
-        text-decoration: none;
-        background: #2563eb;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 7px;
-        transition: 0.2s;
-    }
-
-    .button:hover {
-        background: #1d4ed8;
-    }
-
-    /* MEDIA */
-
-    .media-section {
-        margin-top: 45px;
-    }
-
-    .media-box {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .media-box h3 {
-        color: #1d4ed8;
-        margin-bottom: 15px;
-    }
-
-    .media-box img {
-        width: 100%;
-        max-height: 350px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-
-    .media-box video {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    /* FOOTER */
-
-    footer {
-        margin-top: 60px;
-        padding: 25px;
-        text-align: center;
-        background: #1f2937;
-        color: white;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 768px) {
-
-        .kursus-grid,
-        .components {
-            grid-template-columns: 1fr;
+    <style>
+        * {
+            box-sizing: border-box;
         }
 
-        .container {
-            width: 94%;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
         }
 
-        header h1 {
-            font-size: 28px;
-        }
-
+        /* Navbar */
         .navbar {
-            flex-direction: column;
+            background: #007bff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .navbar a {
-            width: 100%;
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-menu .register {
+            background: white;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Program */
+        .program {
+            padding: 50px 20px;
             text-align: center;
         }
-    }
 
-</style>
-```
+        .program h2 {
+            margin-bottom: 30px;
+        }
 
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #007bff;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header>
-
-```
-<h1>📚 Kursusku</h1>
-
-<p>
-    Platform belajar online untuk meningkatkan keterampilanmu
-</p>
-```
-
-</header>
-
-<!-- NAVIGATION -->
-
+<!-- NAVIGASI -->
 <nav class="navbar">
 
-```
-<a href="index.php">
-    🏠 Katalog
-</a>
+    <a href="index.php" class="logo">
+        Kursusku
+    </a>
 
-<a href="server-time.php">
-    🕐 Server Time
-</a>
-
-<a href="fee-calculator.php">
-    💰 Kalkulator
-</a>
-
-<a href="test-functions.php">
-    🧪 Test Functions
-</a>
-```
+    <div class="nav-menu">
+        <a href="index.php">Beranda</a>
+        <a href="#program">Program</a>
+        <a href="registration.php" class="register">
+            Registrasi
+        </a>
+    </div>
 
 </nav>
 
-<!-- MAIN -->
 
-<div class="container">
-
-```
 <!-- HERO -->
-
 <section class="hero">
 
-    <h2>
-        Temukan Kursus Pilihanmu
-    </h2>
+    <h1>Selamat Datang di Kursusku</h1>
 
     <p>
-        Pilih kursus sesuai kebutuhanmu dan
-        tingkatkan kemampuan bersama Kursusku.
+        Platform pembelajaran untuk meningkatkan keterampilan
+        dan pengetahuan melalui berbagai program kursus.
     </p>
 
-</section>
-
-
-<!-- KATALOG -->
-
-<section>
-
-    <h2 class="section-title">
-        📚 Katalog Kursus
-    </h2>
-
-    <div class="kursus-grid">
-
-        <?php foreach ($kursus as $item): ?>
-
-            <div class="kursus">
-
-                <h3>
-                    <?= htmlspecialchars($item["nama"]) ?>
-                </h3>
-
-                <p>
-                    <strong>Kategori:</strong>
-                    <?= htmlspecialchars($item["kategori"]) ?>
-                </p>
-
-                <p>
-                    <strong>Durasi:</strong>
-                    <?= htmlspecialchars($item["durasi"]) ?>
-                </p>
-
-                <p class="harga">
-                    Rp <?= number_format($item["harga"], 0, ',', '.') ?>
-                </p>
-
-
-                <?php if ($item["status"] === "Tersedia"): ?>
-
-                    <span class="status tersedia">
-                        ✓ Tersedia
-                    </span>
-
-                <?php else: ?>
-
-                    <span class="status penuh">
-                        ✕ Penuh
-                    </span>
-
-                <?php endif; ?>
-
-            </div>
-
-        <?php endforeach; ?>
-
-    </div>
+    <a href="registration.php" class="btn">
+        Daftar Kursus Sekarang
+    </a>
 
 </section>
 
 
-<!-- KOMPONEN -->
+<!-- PROGRAM -->
+<section class="program" id="program">
 
-<section class="component-section">
+    <h2>Program Kursus</h2>
 
-    <h2 class="section-title">
-        ⚙️ Komponen Aplikasi
-    </h2>
+    <div class="cards">
 
-    <div class="components">
-
-
-        <!-- SERVER TIME -->
-
-        <div class="component">
-
-            <h3>
-                🕐 Server Time
-            </h3>
-
+        <div class="card">
+            <h3>Pemrograman Web</h3>
             <p>
-                Menampilkan waktu yang diproses
-                langsung oleh PHP server.
+                Belajar membuat website menggunakan HTML,
+                CSS, PHP, dan teknologi web lainnya.
             </p>
-
-            <a
-                class="button"
-                href="server-time.php"
-            >
-                Buka Server Time
-            </a>
-
         </div>
 
-
-        <!-- KALKULATOR -->
-
-        <div class="component">
-
-            <h3>
-                💰 Kalkulator Biaya
-            </h3>
-
+        <div class="card">
+            <h3>Desain Grafis</h3>
             <p>
-                Menghitung biaya kursus dan
-                potongan harga secara otomatis.
+                Pelajari dasar desain grafis dan pembuatan
+                berbagai media visual.
             </p>
-
-            <a
-                class="button"
-                href="fee-calculator.php"
-            >
-                Buka Kalkulator
-            </a>
-
         </div>
 
-
-        <!-- TEST -->
-
-        <div class="component">
-
-            <h3>
-                🧪 Test Functions
-            </h3>
-
+        <div class="card">
+            <h3>Digital Marketing</h3>
             <p>
-                Menguji fungsi PHP dengan
-                enam test otomatis.
+                Pelajari strategi pemasaran digital melalui
+                berbagai platform online.
             </p>
-
-            <a
-                class="button"
-                href="test-functions.php"
-            >
-                Buka Testing
-            </a>
-
         </div>
 
     </div>
 
 </section>
 
-
-<!-- MEDIA -->
-
-<section class="media-section">
-
-    <h2 class="section-title">
-        🎬 Media Kursus
-    </h2>
-
-    <div class="media-box">
-
-        <h3>
-            Video Intro Kursusku
-        </h3>
-
-        <video controls>
-
-            <source
-                src="assets/video/intro-kursus.mp4"
-                type="video/mp4"
-            >
-
-            Browser kamu tidak mendukung
-            pemutaran video.
-
-        </video>
-
-    </div>
-
-</section>
-```
-
-</div>
 
 <!-- FOOTER -->
-
 <footer>
 
-```
-<p>
-    &copy; 2026 Kursusku Prototype
-</p>
-```
+    <p>
+        &copy; 2026 Kursusku. All Rights Reserved.
+    </p>
 
 </footer>
 
 </body>
-
 </html>
+```
