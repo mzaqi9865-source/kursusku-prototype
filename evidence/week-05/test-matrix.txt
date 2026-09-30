@@ -1,0 +1,16 @@
+WEEK 05 - TEST MATRIX
+
+Project: Kursusku Prototype
+
+No | Test Case | Method | Expected Result | Status
+---|-----------|--------|-----------------|-------
+1  | Membuka form registrasi | GET | Form registration tampil | PASS
+2  | Mengisi nama lengkap | POST | Data diterima | PASS
+3  | Mengisi email | POST | Email diterima | PASS
+4  | Mengisi No HP/WhatsApp | POST | Nomor diterima | PASS
+5  | Memilih program studi | POST | Pilihan diterima | PASS
+6  | Memilih kursus | POST | Kursus diterima | PASS
+7  | Memilih jenis peserta | POST | Jenis peserta diterima | PASS
+8  | Mengisi minat tambahan | POST | Data diterima | PASS
+9  | Mengisi catatan | POST | Catatan diterima | PASS
+10 | Membuka URL registration | GET | Halaman dapat diakses | PASS

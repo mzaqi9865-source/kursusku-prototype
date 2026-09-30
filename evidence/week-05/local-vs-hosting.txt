@@ -1,0 +1,34 @@
+WEEK 05 - LOCAL VS HOSTING
+
+LOCAL DEVELOPMENT
+-----------------
+URL:
+http://localhost/kursusku-prototype/
+
+Server:
+Laragon
+
+Web Server:
+Apache
+
+Project Location:
+C:\laragon\www\kursusku-prototype
+
+LOCAL TESTING
+-------------
+Website dijalankan melalui komputer lokal menggunakan Laragon.
+File PHP diproses oleh web server lokal.
+
+HOSTING
+-------
+Website dapat dipindahkan ke hosting agar dapat diakses melalui
+internet menggunakan domain atau alamat hosting.
+
+Perbedaan utama:
+
+1. Local hanya dapat digunakan pada lingkungan komputer lokal.
+2. Hosting dapat diakses melalui internet.
+3. Local menggunakan server seperti Laragon.
+4. Hosting menggunakan server dari penyedia hosting.
+5. File dan konfigurasi server perlu disesuaikan ketika dipindahkan
+   dari local ke hosting.
