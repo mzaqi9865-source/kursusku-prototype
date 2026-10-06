@@ -1,0 +1,12 @@
+TEST MATRIX WEEK 06
+
+No | Pengujian              | Hasil
+1  | Form lengkap           | PASS
+2  | Mahasiswa              | PASS
+3  | Guru                   | PASS
+4  | Checkbox minat         | PASS
+5  | Minat kosong           | PASS
+6  | Harga kursus           | PASS
+7  | Diskon peserta         | PASS
+8  | Total biaya            | PASS
+9  | History dummy          | PASS
